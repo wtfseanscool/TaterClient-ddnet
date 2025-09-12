@@ -682,6 +682,7 @@ public:
 		SETTINGS_ASSETS,
 		SETTINGS_TCLIENT,
 		SETTINGS_PROFILES,
+		SETTINGS_CAKE,
 
 		SETTINGS_LENGTH,
 	};
@@ -827,6 +828,9 @@ private:
 	// found in menus_settings.cpp
 	void RenderSettingsDDNet(CUIRect MainView);
 	void RenderSettingsAppearance(CUIRect MainView);
+
+	// found in menus_cake.cpp
+	void RenderSettingsCake(CUIRect MainView);
 
 	// found in menus_tclient.cpp
 	void RenderSettingsTClient(CUIRect MainView);

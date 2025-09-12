@@ -181,6 +181,11 @@ if(NOT(CMAKE_BUILD_TYPE))
   endif()
 endif()
 
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /LTCG")
+endif()
+
 if(NOT(CMAKE_BUILD_TYPE MATCHES "^(Release|Debug|RelWithDebInfo|MinSizeRel)$"))
   message(WARNING "Unknown CMAKE_BUILD_TYPE, should be one of Release, Debug, RelWithDebInfo or MinSizeRel")
 endif()
@@ -1064,6 +1069,9 @@ set(EXPECTED_DATA
   audio/hook_attach-01.wv
   audio/hook_attach-02.wv
   audio/hook_attach-03.wv
+  audio/hook_attach_local-01.wv
+  audio/hook_attach_local-02.wv
+  audio/hook_attach_local-03.wv
   audio/hook_loop-01.wv
   audio/hook_loop-02.wv
   audio/hook_noattach-01.wv
@@ -2501,6 +2509,7 @@ if(CLIENT)
     components/menus.cpp
     components/menus.h
     components/menus_browser.cpp
+    components/cake/menus_cake.cpp
     components/menus_demo.cpp
     components/menus_ingame.cpp
     components/menus_ingame_touch_controls.cpp
