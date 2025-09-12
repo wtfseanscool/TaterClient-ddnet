@@ -2586,7 +2586,7 @@ void CGameClient::OnPredict()
 				if(Events & COREEVENT_GROUND_JUMP)
 					m_Sounds.PlayAndRecord(CSounds::CHN_WORLD, SOUND_PLAYER_JUMP, 1.0f, Pos);
 				if(Events & COREEVENT_HOOK_ATTACH_GROUND)
-					m_Sounds.PlayAndRecord(CSounds::CHN_WORLD, SOUND_HOOK_ATTACH_GROUND, 1.0f, Pos);
+					m_Sounds.PlayAndRecord(CSounds::CHN_WORLD, g_Config.m_ClLocalHookSound ? SOUND_HOOK_ATTACH_GROUND_LOCAL : SOUND_HOOK_ATTACH_GROUND, 1.0f, Pos);
 				if(Events & COREEVENT_HOOK_HIT_NOHOOK)
 					m_Sounds.PlayAndRecord(CSounds::CHN_WORLD, SOUND_HOOK_NOATTACH, 1.0f, Pos);
 			}
